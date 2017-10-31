@@ -1,6 +1,11 @@
 # .bashrc
 
-alias l='ls -ltGrh'
+if [[ "$(uname)" == 'Linux' ]]; then
+   alias l='ls -ltrh --color=auto'
+else
+   alias l='ls -ltGrh'
+fi
+
 alias ldir='l | grep '^d''
 alias sb='sbatch'
 alias sc='sacct'
